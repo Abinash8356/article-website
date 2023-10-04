@@ -1,0 +1,27 @@
+.article-container {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.article {
+  padding: 10px;
+}
+
+.article-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.article-content {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.article-author {
+  margin-top: 10px;
+  font-style: italic;
+  text-align: right;
+}

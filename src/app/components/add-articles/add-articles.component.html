@@ -1,0 +1,21 @@
+<div>
+  <h1>Add Article</h1>
+  <form [formGroup]="articleForm">
+    <mat-label>Title:</mat-label>
+    <mat-form-field>
+      <input matInput placeholder="Enter" required formControlName="title">
+    </mat-form-field>
+
+    <mat-label>Content:</mat-label>
+    <mat-form-field>
+      <textarea matInput placeholder="Enter" rows="3" required formControlName="content"></textarea>
+    </mat-form-field>
+
+    <mat-label>Author Name:</mat-label>
+    <mat-form-field>
+      <input matInput placeholder="Enter" required formControlName="authorName">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">Submit</button>
+  </form>
+</div>
