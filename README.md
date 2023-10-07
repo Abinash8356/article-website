@@ -25,3 +25,40 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Frontend API'S
+
+login: `http://localhost:8080/api/v1/auth/login/user`,
+register: `http://localhost:8080/api/v1/auth/create/user`
+
+addArticle: `http://localhost:8080/api/v1/articles/create`,
+getAllArticle: `http://localhost:8080/api/v1/articles/getAll`,
+deleteArticle: `http://localhost:8080/api/v1/articles/deleteById/articleId`,
+
+## Frontend packages
+
+Angular Material package
+
+## Frontend Run command
+
+First `npm install` for installing packages.
+
+For run `ng serve`.
+
+## Backend Packages
+
+bcryptjs,
+body-parser,
+cookie-parser,
+cors,
+dotenv,
+env,
+express,
+jsonwebtoken,
+mongoose,
+morgan,
+nodemon,
+
+# Backend Run Command
+
+npm run dev

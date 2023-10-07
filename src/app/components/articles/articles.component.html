@@ -1,14 +1,7 @@
-<div class="article-container">
+<div class="article-container" *ngFor="let article of articleArray">
   <div class="article">
-    <h3 class="article-title">Article Title</h3>
-    <p class="article-content">Article Content</p>
-    <p class="article-author">Author Name</p>
-  </div>
-</div>
-<div class="article-container">
-  <div class="article">
-    <h3 class="article-title">Article Title</h3>
-    <p class="article-content">Article Content</p>
-    <p class="article-author">Author Name</p>
+      <h3 class="article-title">{{ article.title }} <mat-icon class="material-symbols-outlined" (click)="onDelete(article._id)"> delete</mat-icon> </h3>
+    <p class="article-content">{{ article.content }}</p>
+    <div class="article-author">Author: {{ article.authorName }}</div>
   </div>
 </div>

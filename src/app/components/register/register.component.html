@@ -1,25 +1,28 @@
-<form>
+<form [formGroup]="registerForm">
   <mat-form-field>
-    <input matInput placeholder="First Name" required>
+    <input matInput placeholder="First Name" formControlName="firstName">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Last Name" required>
+    <input matInput placeholder="Last Name" formControlName="lastName">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Email" required>
+    <input matInput placeholder="Email" formControlName="email">
+    <mat-error *ngIf="registerForm.get('email').hasError('email')"
+        >Please enter a valid email</mat-error
+      >
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Username" required>
+    <input matInput placeholder="Username" formControlName="userName">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput type="password" placeholder="Password" required>
+    <input matInput type="password" placeholder="Password" formControlName="password">
   </mat-form-field>
 
-  <button mat-raised-button color="primary">Register</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()">Register</button>
   
   <p class="redirect-link">Go back to? <a routerLink="/login">Login</a></p>
 </form>

@@ -1,18 +1,55 @@
-<form>
-  <mat-form-field>
-    <input matInput placeholder="Username" required>
-  </mat-form-field>
+<form [formGroup]="loginForm">
+  <div>
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName="email" />
+      <mat-error *ngIf="loginForm.get('email').hasError('email')"
+        >Please enter a valid email</mat-error
+      >
+    </mat-form-field>
 
-  <mat-form-field>
-    <input matInput type="password" placeholder="Password" required>
-  </mat-form-field>
+    <mat-form-field>
+      <div class="password-input-container">
+        <input
+          matInput
+          placeholder="Password"
+          formControlName="password"
+          [type]="showPass ? 'text' : 'password'"
+        />
+        <span class="password-toggle" (click)="togglePassword()">
+          <mat-icon class="material-symbols-outlined">
+            {{ showPass ? 'visibility' : 'visibility_off' }}
+          </mat-icon>
+        </span>
+      </div>
+    </mat-form-field>
+    
 
-  <mat-form-field>
-    <input matInput type="password" placeholder="Confirm Password" required>
-  </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Confirm Password"
+        formControlName="confirmPassword"
+        [type]="hidePass ? 'text' : 'password'"
+      />
+      <span class="password-toggle" (click)="showPassword()">
+        <mat-icon class="material-symbols-outlined">
+          {{ hidePass ? 'visibility' : 'visibility_off' }}
+        </mat-icon>
+      </span>
+      <mat-error
+        *ngIf="loginForm.get('confirmPassword').hasError('passwordMismatch')"
+      >
+        Password and confirm password must be same.
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-raised-button color="primary" (click)="onSubmit()">
+      Login
+    </button>
+  </div>
 
-  <button mat-raised-button color="primary">Login</button>
-  
-  <p class="redirect-link">Don't have an account? <a routerLink="/register">Register</a></p>
+  <p class="redirect-link">
+    Don't have an account? <a routerLink="/register">Register</a>
+  </p>
 </form>
-
